@@ -1,0 +1,532 @@
+.permissions-container {
+  padding: 20px;
+  background: #f5f7fa;
+  min-height: calc(100vh - 80px);
+}
+
+.permissions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.permissions-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.permissions-filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.permissions-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.permissions-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.permissions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.permissions-table th {
+  background: #f8f9fa;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e9ecef;
+  font-size: 14px;
+}
+
+.permissions-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+}
+
+.permissions-table tr:hover {
+  background: #f8f9fa;
+}
+
+.permission-code {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #e74c3c;
+  background: #fdf2f2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.permission-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.permission-resource {
+  font-family: 'Courier New', monospace;
+  color: #7f8c8d;
+  font-size: 12px;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.permission-description {
+  color: #7f8c8d;
+  font-size: 13px;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+.permission-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.no-permissions {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+.permissions-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.module-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 60px;
+}
+
+.module-kb {
+  background: #e8f5e8;
+  color: #27ae60;
+}
+
+.module-user {
+  background: #e8f4fd;
+  color: #3498db;
+}
+
+.module-role {
+  background: #fdf2e9;
+  color: #f39c12;
+}
+
+.module-permission {
+  background: #f4e8fd;
+  color: #9b59b6;
+}
+
+.module-system {
+  background: #fde8e8;
+  color: #e74c3c;
+}
+
+.system-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 60px;
+}
+
+.system-badge.is-system {
+  background: #e8f5e8;
+  color: #27ae60;
+}
+
+.system-badge.custom {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.modal-large {
+  max-width: 800px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: #e9ecef;
+  color: #2c3e50;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* 权限分配样式 */
+.permission-assignment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.assignment-header {
+  margin-bottom: 10px;
+}
+
+.permission-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.permission-module {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  background: #f8f9fa;
+}
+
+.module-title {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.module-permissions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.permission-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.permission-checkbox:hover {
+  background: #f8f9fa;
+  border-color: #3498db;
+}
+
+.permission-checkbox input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+  accent-color: #3498db;
+}
+
+.checkbox-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checkbox-label strong {
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.checkbox-label small {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #2980b9;
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #7f8c8d;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #3498db;
+  border: 1px solid #3498db;
+}
+
+.btn-outline:hover {
+  background: #3498db;
+  color: white;
+}
+
+.btn-outline-danger {
+  background: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.btn-outline-danger:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.icon-plus:before {
+  content: '+';
+  font-weight: bold;
+}
+
+/* 警告框样式 */
+.alert {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.alert-error {
+  background: #fdf2f2;
+  color: #c53030;
+  border: 1px solid #fed7d7;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .permissions-container {
+    padding: 10px;
+  }
+
+  .permissions-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .permissions-filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filter-group {
+    min-width: unset;
+  }
+
+  .permissions-stats {
+    flex-direction: column;
+  }
+
+  .permissions-table-container {
+    overflow-x: auto;
+  }
+
+  .permissions-table {
+    min-width: 800px;
+  }
+
+  .modal {
+    width: 95%;
+    margin: 20px;
+  }
+
+  .module-permissions {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-actions {
+    flex-direction: column;
+  }
+}
